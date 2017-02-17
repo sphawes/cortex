@@ -1,0 +1,327 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L ATMEGA328PB-A IC?
+U 1 1 58A67873
+P 6700 2250
+F 0 "IC?" H 6300 3725 50  0000 R BNN
+F 1 "ATMEGA328PB-AU-ND" H 6300 3650 50  0000 R BNN
+F 2 "Housings_QFP:TQFP-32_7x7mm_Pitch0.8mm" H 6650 850 50  0001 L CIN
+F 3 "" H 6400 2300 50  0000 C CNN
+	1    6700 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L D_Bridge_+-AA D?
+U 1 1 58A6790A
+P 3050 1500
+F 0 "D?" H 3100 1775 50  0000 L CNN
+F 1 "MDB6S" H 3100 1700 50  0000 L CNN
+F 2 "" H 3050 1500 50  0000 C CNN
+F 3 "" H 3050 1500 50  0000 C CNN
+	1    3050 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L LM7805CT U?
+U 1 1 58A6794D
+P 4200 1550
+F 0 "U?" H 4000 1750 50  0000 C CNN
+F 1 "L7805CDT-TR" H 4200 1750 50  0000 L CNN
+F 2 "TO-220" H 4200 1650 50  0000 C CIN
+F 3 "" H 4200 1550 50  0000 C CNN
+	1    4200 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transformer_SP_2S T?
+U 1 1 58A67999
+P 2000 1500
+F 0 "T?" H 2000 2000 50  0000 C CNN
+F 1 "Transformer FS10-110-C2-B" H 2000 1000 50  0000 C CNN
+F 2 "" H 2000 1500 50  0000 C CNN
+F 3 "" H 2000 1500 50  0000 C CNN
+	1    2000 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L S102S01 U?
+U 1 1 58A67A07
+P 1850 2650
+F 0 "U?" H 1650 2850 50  0000 L CNN
+F 1 "SSR G3MB-202P" H 1850 2850 50  0000 L CNN
+F 2 "SIP4_Sharp-SSR" H 1650 2450 50  0000 L CIN
+F 3 "" H 1815 2650 50  0000 L CNN
+	1    1850 2650
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 1400 2400 1600
+Wire Wire Line
+	2400 1100 3050 1100
+Wire Wire Line
+	3050 1100 3050 1200
+Wire Wire Line
+	2400 1900 3050 1900
+Wire Wire Line
+	3050 1900 3050 1800
+Wire Wire Line
+	3350 1500 3800 1500
+Wire Wire Line
+	2750 1500 2750 1800
+Wire Wire Line
+	2750 1800 4850 1800
+$Comp
+L CP C?
+U 1 1 58A67CE1
+P 3600 1650
+F 0 "C?" H 3625 1750 50  0000 L CNN
+F 1 "CP" H 3625 1550 50  0000 L CNN
+F 2 "" H 3638 1500 50  0000 C CNN
+F 3 "" H 3600 1650 50  0000 C CNN
+	1    3600 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 1500 4600 750 
+Wire Wire Line
+	4600 750  6400 750 
+Wire Wire Line
+	4850 1800 4850 3750
+Wire Wire Line
+	4850 3750 6500 3750
+Connection ~ 4200 1800
+$Comp
+L Screw_Terminal_1x02 J?
+U 1 1 58A67F57
+P 650 1450
+F 0 "J?" H 650 1700 50  0000 C TNN
+F 1 "Screw_Terminal_1x02" V 500 1450 50  0000 C TNN
+F 2 "" H 650 1225 50  0001 C CNN
+F 3 "" H 625 1450 50  0001 C CNN
+	1    650  1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Screw_Terminal_1x02 J?
+U 1 1 58A6805F
+P 650 2650
+F 0 "J?" H 650 2900 50  0000 C TNN
+F 1 "Screw_Terminal_1x02" V 500 2650 50  0000 C TNN
+F 2 "" H 650 2425 50  0001 C CNN
+F 3 "" H 625 2650 50  0001 C CNN
+	1    650  2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	900  2550 850  2550
+$Comp
+L Screw_Terminal_1x02 J?
+U 1 1 58A6814B
+P 650 3700
+F 0 "J?" H 650 3950 50  0000 C TNN
+F 1 "In Bottom Plug" V 500 3700 50  0000 C TNN
+F 2 "" H 650 3475 50  0001 C CNN
+F 3 "" H 625 3700 50  0001 C CNN
+	1    650  3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Screw_Terminal_1x02 J?
+U 1 1 58A681AA
+P 650 4600
+F 0 "J?" H 650 4850 50  0000 C TNN
+F 1 "Out Bottom Plug" V 500 4600 50  0000 C TNN
+F 2 "" H 650 4375 50  0001 C CNN
+F 3 "" H 625 4600 50  0001 C CNN
+	1    650  4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L S102S01 U?
+U 1 1 58A681F9
+P 1850 4600
+F 0 "U?" H 1650 4800 50  0000 L CNN
+F 1 "SSR G3MB-202P" H 1850 4800 50  0000 L CNN
+F 2 "SIP4_Sharp-SSR" H 1650 4400 50  0000 L CIN
+F 3 "" H 1815 4600 50  0000 L CNN
+	1    1850 4600
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	850  3800 850  4500
+Wire Wire Line
+	850  3600 1550 3600
+Wire Wire Line
+	1550 3600 1550 4500
+Wire Wire Line
+	850  4700 1550 4700
+Wire Wire Line
+	900  1550 900  2550
+Wire Wire Line
+	900  1550 850  1550
+Wire Wire Line
+	850  1350 1600 1350
+Wire Wire Line
+	1100 1350 1100 2550
+Connection ~ 900  1700
+Wire Wire Line
+	1600 1350 1600 1300
+Connection ~ 1100 1350
+Wire Wire Line
+	2150 2750 4200 2750
+Wire Wire Line
+	4200 1800 4200 4700
+Wire Wire Line
+	4200 4700 2150 4700
+Connection ~ 4200 2750
+$Comp
+L CONN_01X05 P?
+U 1 1 58A688C8
+P 9400 750
+F 0 "P?" H 9400 1050 50  0000 C CNN
+F 1 "FTDI Programming Port" V 9500 750 50  0000 C CNN
+F 2 "" H 9400 750 50  0000 C CNN
+F 3 "" H 9400 750 50  0000 C CNN
+	1    9400 750 
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6400 750  6400 650 
+Wire Wire Line
+	6400 650  8900 650 
+Wire Wire Line
+	8900 650  8900 950 
+Wire Wire Line
+	8900 950  9200 950 
+Wire Wire Line
+	6600 3750 9300 3750
+Wire Wire Line
+	9300 950  9300 4100
+Wire Wire Line
+	8000 2750 9400 2750
+Wire Wire Line
+	9400 2750 9400 950 
+Wire Wire Line
+	8000 2850 9500 2850
+Wire Wire Line
+	9500 2850 9500 950 
+Wire Wire Line
+	8000 2550 9600 2550
+Wire Wire Line
+	9600 2550 9600 950 
+Wire Wire Line
+	8000 2950 8350 2950
+Wire Wire Line
+	8350 2950 8350 3850
+Wire Wire Line
+	8350 3850 3900 3850
+Wire Wire Line
+	3900 3850 3900 2550
+Wire Wire Line
+	3900 2550 2150 2550
+Wire Wire Line
+	8000 3050 8250 3050
+Wire Wire Line
+	8250 3050 8250 4500
+Wire Wire Line
+	8250 4500 2150 4500
+$Comp
+L CONN_02X04 P?
+U 1 1 58A68B5E
+P 10250 3400
+F 0 "P?" H 10250 3650 50  0000 C CNN
+F 1 "CONN_02X04" H 10250 3150 50  0000 C CNN
+F 2 "" H 10250 2200 50  0000 C CNN
+F 3 "" H 10250 2200 50  0000 C CNN
+	1    10250 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10500 4100 10500 3550
+Wire Wire Line
+	9300 4100 10500 4100
+Connection ~ 9300 3750
+$Comp
+L R R?
+U 1 1 58A68D4E
+P 9550 3550
+F 0 "R?" V 9630 3550 50  0000 C CNN
+F 1 "R" V 9550 3550 50  0000 C CNN
+F 2 "" V 9480 3550 50  0000 C CNN
+F 3 "" H 9550 3550 50  0000 C CNN
+	1    9550 3550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9200 950  9200 3550
+$Comp
+L CP C?
+U 1 1 58A68E39
+P 9800 3850
+F 0 "C?" H 9825 3950 50  0000 L CNN
+F 1 "1uF" H 9825 3750 50  0000 L CNN
+F 2 "" H 9838 3700 50  0000 C CNN
+F 3 "" H 9800 3850 50  0000 C CNN
+	1    9800 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9200 3550 9400 3550
+Wire Wire Line
+	9700 3550 10000 3550
+Wire Wire Line
+	9800 3700 9800 3550
+Connection ~ 9800 3550
+Wire Wire Line
+	9800 4000 9800 4100
+Connection ~ 9800 4100
+Wire Wire Line
+	1100 2550 1550 2550
+Wire Wire Line
+	850  2750 1550 2750
+Wire Wire Line
+	900  1700 1600 1700
+$EndSCHEMATC
