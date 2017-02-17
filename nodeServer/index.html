@@ -7,7 +7,10 @@
     <!--JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <!--Bootstrap-->
+    <!--Bootstrap JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!--Bootstrap Slider Plugin-->
@@ -19,6 +22,8 @@
     -->
     <script src="https://cdn.rawgit.com/chrisveness/crypto/4e93a4d/sha1.js"></script>
 
+    <!--My JS and CSS-->
+    <script src="main.js"></script>
     <link rel="stylesheet" href="cortex.webhop.me:8081/style.css">
 
 </head>
@@ -26,34 +31,98 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="http://cortex.webhop.me:8081"> <img src="http://cortex.webhop.me:8081/icon.png" height="30px" style="display:inline;margin-right:8px;margin-top:-4px;"/>Cortex Dashboard</a>
+                <a class="navbar-brand" href="http://cortex.webhop.me:8081"> <img src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png" height="30px" style="display:inline;margin-right:12px;margin-top:-4px;"/>Cortex Dashboard</a>
             </div>
         </div>
     </nav>
-    <div class="container" style="margin-top:50px;">
-
-          <h1>Cortex Dashboard</h1>
+    <div class="container" style="margin-top:80px;">
 
           <div id="buttonColumn" class="col-md-8">
 
               <div id="lightsPanel" class="panel panel-warning">
                   <div class="panel-heading">Lights</div>
                   <div class="panel-body">
-                      <p>BUTTONS GO HERE</p>
+                      <!-- Workshop -->
+                      <div class="btn-group">
+                          <button type="button" class="btn btn-lg btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Workshop <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dLabel">
+                              <li><a href="#">On</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">Dim</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">Off</a></li>
+                          </ul>
+                      </div>
+
+                      <!-- Kitchen -->
+                      <div class="btn-group">
+                          <button type="button" class="btn btn-lg btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Kitchen <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dLabel">
+                              <li><a href="#">On</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">Dim</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">Off</a></li>
+                          </ul>
+                      </div>
+
+                      <!-- Bedroom -->
+                      <div class="btn-group">
+                          <button type="button" class="btn btn-lg btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Bedroom <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dLabel">
+                              <li><a href="#">On</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">Dim</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">Off</a></li>
+                          </ul>
+                      </div>
+
+                      <!-- Presets -->
+                      <div class="btn-group" role="group" aria-label="...">
+                          <button type="button" class="btn btn-lg btn-default">Sleeping</button>
+                          <button type="button" class="btn btn-lg btn-default">Working</button>
+                          <button type="button" class="btn btn-lg btn-default">Reading</button>
+                      </div>
+
                   </div>
               </div>
 
               <div class="panel panel-success">
                   <div class="panel-heading">Access</div>
                   <div class="panel-body">
-                      <p>BUTTONS GO HERE</p>
+                      <button type="button" class="btn btn-lg btn-danger">Front Door</button>
+                      <button type="button" class="btn btn-lg btn-success">HackPGH</button>
+                      <button type="button" class="btn btn-lg btn-info">Recent Activity</button>
+                      <button type="button" class="btn btn-lg btn-primary">Access Settings</button>
                   </div>
               </div>
 
               <div class="panel panel-info">
                   <div class="panel-heading">Status</div>
                   <div class="panel-body">
-                      <p>BUTTONS GO HERE</p>
+                      <div class="col-md-6">
+                          <div class="input-group input-group-lg">
+                              <span class="input-group-addon" id="sizing-addon2">70F</span>
+                              <input type="text" class="form-control" placeholder="#F">
+                                  <span class="input-group-btn">
+                                      <button class="btn btn-default" type="button">Set</button>
+                                  </span>
+                              </input>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                              <button type="button" class="btn btn-success">Washer</button>
+                              <button type="button" class="btn btn-info">Dryer</button>
+                          </div>
+                      </div>
                   </div>
               </div>
           </div>
