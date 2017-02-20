@@ -23,11 +23,20 @@
     <script src="https://cdn.rawgit.com/chrisveness/crypto/4e93a4d/sha1.js"></script>
 
     <!--My JS and CSS-->
-    <script src="main.js"></script>
-    <link rel="stylesheet" href="cortex.webhop.me:8081/style.css">
+    <script src="cortex.webhop.me:8081/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+    html,body {
+        height:100%;
+        display: flex;
+
+    }
+    </style>
+
 
 </head>
-<body>
+<body style="display:flex;">
+    <!-- Top Nav Bar
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -35,7 +44,18 @@
             </div>
         </div>
     </nav>
-    <div class="container col-md-12" style="margin-top:80px;">
+    -->
+    <div class="container col-md-2" style="background-color:black;color:white;padding-left:20px;align-items:stretch;">
+        <h3>Hello Stephen!</h3>
+
+        <div class="container col-md-12">
+            <p id="date"><script>var d = new Date();document.getElementById("date").innerHTML = d.toDateString();</script></p>
+        </div>
+
+    </div>
+
+
+    <div class="container col-md-10" style="margin-top:20px;">
 
           <div id="buttonColumn" class="col-md-8">
 

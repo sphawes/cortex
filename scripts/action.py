@@ -1,23 +1,41 @@
-import serial
 from sys import argv
+import serial
+import urllib.request
+import requests
+import json
+import simplejson
+import RPi.GPIO as GPIO
+
 
 script, first = argv
 
 portStatus = False
 ser=serial.Serial()
 
-def changeConnectStatus(state):
-    global portStatus
+if first == "on":
+    GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
+    GPIO.setup(7, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
+    GPIO.output(7,True) ## Turn on GPIO pin 7
+    GPIO.setwarnings(False)
+else:
+    GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
+    GPIO.setup(7, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
+    GPIO.output(7,False) ## Turn on GPIO pin 7
+    GPIO.setwarnings(False)
 
-    if state:
-        portStatus = True
-        app.connectButton.configure(text = "Connected!")
-        print "Port Status: " + str(portStatus)
+def hpghStatus():
 
+    url = "http://iobridge.com/api/feed/key=waStTNuoEvld6t9wsM&callback=?"
+
+    response = urllib.request.urlopen(url)
+    jsonObject = simplejson.load(response)
+
+    lightStatus = jsonObject["module"]["channels"][0]["AnalogInput"]
+
+    if int(float(lightStatus)) > 500:
+        return True
     else:
-        portStatus = False
-        app.connectButton.configure(text = "Connect")
-        print "Port Status: " + str(portStatus)
+        return False
 
 def sendSerial(data):
     global portStatus
