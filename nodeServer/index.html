@@ -32,10 +32,19 @@
 
     }
     </style>
+    <script>
+        function loadImage(){
+          var d = new Date();
+          document.getElementById("date").innerHTML = d.toDateString();
+        }
+
+
+
+    </script>
 
 
 </head>
-<body style="display:flex;">
+<body style="display:flex;" onload="loadImage()">
     <!-- Top Nav Bar
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
@@ -49,7 +58,7 @@
         <h3>Hello Stephen!</h3>
 
         <div class="container col-md-12">
-            <p id="date"><script>var d = new Date();document.getElementById("date").innerHTML = d.toDateString();</script></p>
+            <p id="date"></p>
         </div>
 
     </div>
