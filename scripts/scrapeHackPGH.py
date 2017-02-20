@@ -1,23 +1,18 @@
 #Scrape HackPGH for Open Status
-import requests, bs4, os, re
 import urllib.request
-import shutil
+import requests
+import json
+import simplejson
 
-def isHackPghOpen():
-
-    url = "http://www.hackpittsburgh.org/"
+url = "http://iobridge.com/api/feed/key=waStTNuoEvld6t9wsM&callback=?"
 
 
-    #sweep categories page, bring up each category link
-    res = requests.get(url)
-    res.raise_for_status()
-    soup = bs4.BeautifulSoup(res.text, 'html.parser')
-    #page is now soup-ified in BS4 element 'soup'
-    lightStatusPanel = soup.find("div", {"id": "light_status"});
+response = urllib.request.urlopen(url)
+jsonObject = simplejson.load(response)
 
-    if lightStatusPanel['style'] == "width: 209px; height: 76px; margin-bottom: 0px; background: url('http://www.hackpittsburgh.org/wp-content/uploads/2016/12/shopClosed2.png'); display:none;":
-        return False;
-    elif lightStatusPanel['style'] == "width: 209px; height: 76px; margin-bottom: 0px; background: url('http://www.hackpittsburgh.org/wp-content/uploads/2016/12/shopClosed2.png'); display:none;":
-        
-    else:
-        return True;
+lightStatus = jsonObject["module"]["channels"][0]["AnalogInput"]
+
+if int(float(lightStatus)) > 500:
+    print("Open")
+else:
+    print("Closed")
