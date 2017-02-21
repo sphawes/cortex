@@ -3,8 +3,10 @@ function doOnWindowLoad(){
   document.getElementById("date").innerHTML = d.toDateString();
 
   $.getJSON('http://iobridge.com/api/feed/key=waStTNuoEvld6t9wsM&callback=\?', function(response){
-       var data = response;
-       alert(data['modules']['channels'][0]['AnalogInput']);
+       var jsonObject = JSON.parse(response);
+       alert(response);
+       alert(jsonObject);
+       alert(jsonObject.module.channels[0].AnalogInput);
   })
 
 }
