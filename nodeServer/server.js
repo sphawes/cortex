@@ -13,7 +13,7 @@ app.get("/LEDSwitch", function(req, res){
 	console.log(req.query)
 	try{
       //result = execSync("source ~/cortex/cortexVE/bin/activate")
-      result = execSync("python3 ~/cortex/scripts/action.py off")
+      result = execSync("sudo python3 ~/cortex/scripts/action.py off")
       console.log(result.toString())
 	}
   catch(e){
