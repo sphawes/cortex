@@ -1,4 +1,4 @@
-#!/Users/stephen/Drive/CREATIVEPROJECTS/cortex/cortexVE/bin/python
+#!/home/sphawes/cortex/cortexVE/bin/python
 
 import sys
 import getopt

@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/stephen/Drive/CREATIVEPROJECTS/cortex/cortexVE"
+VIRTUAL_ENV="/home/sphawes/cortex/cortexVE"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

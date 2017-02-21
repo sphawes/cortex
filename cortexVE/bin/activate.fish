@@ -36,7 +36,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/stephen/Drive/CREATIVEPROJECTS/cortex/cortexVE"
+set -gx VIRTUAL_ENV "/home/sphawes/cortex/cortexVE"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
