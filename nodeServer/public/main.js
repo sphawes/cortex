@@ -9,6 +9,7 @@ $(document).ready(function(){
     $("#frontDoorButton").click(function(){
 
         $.get("/LEDSwitch")
+        
     });
 
 })
