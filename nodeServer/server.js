@@ -12,8 +12,8 @@ app.get('/', function (req, res) {
 app.get("/LEDSwitch", function(req, res){
 	console.log(req.query)
 	try{
-      result = execSync("source ~/Drive/creativeProjects/cortex/cortexVE/bin/activate")
-      result = execSync("python3 /Users/stephen/Drive/creativeProjects/cortex/scripts/action.py off")
+      result = execSync("source ~/cortex/cortexVE/bin/activate")
+      result = execSync("python3 ~/cortex/scripts/action.py off")
       console.log(result.toString())
 	}
   catch(e){
