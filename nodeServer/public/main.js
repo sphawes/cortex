@@ -8,8 +8,12 @@ window.onload = doOnWindowLoad;
 $(document).ready(function(){
     $("#frontDoorButton").click(function(){
 
-        $.get("/LEDSwitch")
-        
+        $.get("/LEDSwitch", {"state": "on"})
+
     });
+
+    $("#HackPGH").click(function(){
+        $.get("/LEDSwitch", {"state": "off"})
+    })
 
 })

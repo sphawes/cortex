@@ -12,9 +12,19 @@ app.get('/', function (req, res) {
 app.get("/LEDSwitch", function(req, res){
 	console.log(req.query)
 	try{
-      //result = execSync("source ~/cortex/cortexVE/bin/activate")
-      result = execSync("sudo python ~/cortex/scripts/action.py off")
-      console.log(result.toString())
+
+      LED = req.query.state
+
+      if (LED == "on") {
+		      result = execSync("sudo python ~/cortex/scripts/action.py on")
+		      console.log(result.toString())
+	    }
+      else {
+		      result = execSync("sudo python ~/cortex/scripts/action.py off")
+		      console.log(result.toString())
+	    }
+
+
 	}
   catch(e){
 	    res.status(500).send(e)
