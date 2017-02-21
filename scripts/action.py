@@ -1,5 +1,5 @@
 from sys import argv
-import urllib.request
+#import urllib.request
 import requests
 import json as simplejson
 import RPi.GPIO as GPIO
@@ -21,19 +21,19 @@ def turnLedOff():
     GPIO.output(40,False) ## Turn on GPIO pin 40
 
 
-def hpghStatus():
+#def hpghStatus():
 
-    url = "http://iobridge.com/api/feed/key=waStTNuoEvld6t9wsM&callback=?"
+#    url = "http://iobridge.com/api/feed/key=waStTNuoEvld6t9wsM&callback=?"
 
-    response = urllib.request.urlopen(url)
-    jsonObject = simplejson.load(response)
+#    response = urllib.request.urlopen(url)
+#    jsonObject = simplejson.load(response)
 
-    lightStatus = jsonObject["module"]["channels"][0]["AnalogInput"]
+#    lightStatus = jsonObject["module"]["channels"][0]["AnalogInput"]
 
-    if int(float(lightStatus)) > 500:
-        return True
-    else:
-        return False
+#    if int(float(lightStatus)) > 500:
+#        return True
+#    else:
+#        return False
 
 
 if first == "on":
