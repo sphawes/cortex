@@ -1,8 +1,7 @@
 from sys import argv
 import urllib.request
 import requests
-import json
-import simplejson
+import json as simplejson
 import RPi.GPIO as GPIO
 
 script, first = argv
