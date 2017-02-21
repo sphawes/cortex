@@ -4,9 +4,15 @@ function doOnWindowLoad(){
 
   $.getJSON('http://iobridge.com/api/feed/key=waStTNuoEvld6t9wsM&callback=\?', function(response){
 
-       alert(response);
-       
-       alert(response.module.channels[0].AnalogInput);
+       var value = response.module.channels[0].AnalogInput;
+       if(value > 500){
+         $('#HackPGH').removeClass('btn-danger');
+         $('#HackPGH').addClass('btn-success');
+       }
+       else{
+         $('#HackPGH').removeClass('btn-success');
+         $('#HackPGH').addClass('btn-danger');
+       }
   })
 
 }
