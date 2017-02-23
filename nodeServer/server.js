@@ -17,11 +17,9 @@ app.get("/LEDSwitch", function(req, res){
 
       if (LED == "on") {
 		      result = execSync("sudo python ~/cortex/scripts/action.py on")
-		      console.log(result.toString())
 	    }
       else {
 		      result = execSync("sudo python ~/cortex/scripts/action.py off")
-		      console.log(result.toString())
 	    }
 
 
