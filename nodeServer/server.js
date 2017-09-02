@@ -3,7 +3,7 @@ var express = require('express');
 var execSync = require("child_process").execSync;
 var app = express();
 var gpio = require('onoff').Gpio;
-var led = new gpio(17, 'out');
+var led = new gpio(21, 'out');
 
 app.use(express.static(path.join(__dirname, '/public')));
 
