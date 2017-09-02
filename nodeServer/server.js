@@ -2,6 +2,8 @@ var path = require('path');
 var express = require('express');
 var execSync = require("child_process").execSync;
 var app = express();
+var gpio = require('onoff').Gpio;
+var led = new gpio(17, 'out');
 
 app.use(express.static(path.join(__dirname, '/public')));
 
@@ -16,10 +18,12 @@ app.get("/LEDSwitch", function(req, res){
       LED = req.query.state
 
       if (LED == "on") {
-		      result = execSync("sudo python ~/cortex/scripts/action.py on")
+		      //result = execSync("sudo python ~/cortex/scripts/action.py on")
+              led.writeSync(1);
 	    }
       else {
-		      result = execSync("sudo python ~/cortex/scripts/action.py off")
+		      //result = execSync("sudo python ~/cortex/scripts/action.py off")
+              led.writeSync(0);
 	    }
 
 
