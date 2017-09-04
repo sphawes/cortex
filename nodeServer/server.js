@@ -20,11 +20,11 @@ app.get("/toggle", function(req, res){
       if (LED == "on") {
 		      //result = execSync("sudo python ~/cortex/scripts/action.py on")
               led.writeSync(1);
-	    }
-      else {
+	  }
+      else if (LED == "off"){
 		      //result = execSync("sudo python ~/cortex/scripts/action.py off")
               led.writeSync(0);
-	    }
+	  }
 
 
 	}

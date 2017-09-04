@@ -20,7 +20,7 @@
     <script src="https://cdn.rawgit.com/chrisveness/crypto/4e93a4d/sha1.js"></script>
 
     <!--My JS and CSS-->
-    <!--<script type="text/javascript" src="/main.js"></script>-->
+    <script type="text/javascript" src="/main.js"></script>
     <link rel="stylesheet" type="text/css" href="/style.css">
 
 </head>
@@ -107,14 +107,9 @@
                   <div class="panel-heading">Access</div>
                   <div class="panel-body">
 
-                      <form action = "http://10.0.1.11:8081/toggle" method = "GET">
 
-                          <button id="frontDoorButton" type="submit" value="on" class="btn btn-lg btn-danger">Front Door</button>
-                          <button id="HackPGH" type="submit" value="off" class="btn btn-lg btn-success">HackPGH</button>
-                      </form>
-
-
-
+                      <button id="frontDoorButton" type="button" class="btn btn-lg btn-danger">Front Door</button>
+                      <button id="HackPGH" type="button" class="btn btn-lg btn-success">HackPGH</button>
                       <button type="button" class="btn btn-lg btn-info">Recent Activity</button>
                       <button type="button" class="btn btn-lg btn-primary">Access Settings</button>
                   </div>
