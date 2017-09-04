@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
 })
 
-app.get("/LEDSwitch", function(req, res){
+app.get("/toggle", function(req, res){
 	console.log(req.query)
 	try{
 
