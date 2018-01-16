@@ -1,4 +1,7 @@
-char sph[12] = {'0','0','4','2','E','1','D','E','8','8','F','5'};
+char sph[11] = {'0','0','4','2','E','1','D','E','8','8','F'};
+char gal[11] = {'0','1','0','0','3','3','9','0','C','9','6'};
+char lisa[11] = {'3','5','0','2','1','E','C','5','0','3','E'};
+char drewser[11] = {'3','8','0','0','4','7','7','D','E','C','E'};
 
 int dir = 8;
 int pwm = 7;
@@ -24,15 +27,34 @@ void loop(){
     for(int i = 0; i < 12; i++){
       data[i] = Serial.read();
     }
-    //Serial.print(data);
+    Serial.println(data);
     //comparing:
-    int check = 0;
-    for(int i = 0; i < 12; i++){
+    int check1 = 0;
+    for(int i = 0; i < 11; i++){
       if(data[i] != sph[i]){
-        check = 1;
+        check1 = 1;
       }
     }
-    if(check == 0){
+    int check2 = 0;
+    for(int i = 0; i < 11; i++){
+      if(data[i] != gal[i]){
+        check2 = 1;
+      }
+    }
+    int check3 = 0;
+    for(int i = 0; i < 11; i++){
+      if(data[i] != lisa[i]){
+        check3 = 1;
+      }
+    }
+    int check4 = 0;
+    for(int i = 0; i < 11; i++){
+      if(data[i] != drewser[i]){
+        check4 = 1;
+      }
+    }
+    
+    if(check1 == 0 || check2 == 0 || check3 == 0 || check4 == 0){
       //Serial.println("opening door now");
       digitalWrite(13, HIGH);
       openDoor();
@@ -56,7 +78,7 @@ void openDoor(){
   
   //release knob
   digitalWrite(8, LOW);
-  for(int i = 0; i < 175; i++){
+  for(int i = 0; i < 150; i++){
     digitalWrite(7, HIGH);
     delay(20);
     digitalWrite(7, LOW);

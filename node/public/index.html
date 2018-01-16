@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cortex Dashboard</title>
+
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!--Bootstrap JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--SHA1 Hash Algorithm
+    Implementation:
+    var hash = Sha1.hash(value_to_be_hashed);
+    -->
+    <script src="https://cdn.rawgit.com/chrisveness/crypto/4e93a4d/sha1.js"></script>
+
+    <!--My JS and CSS-->
+    <script type="text/javascript" src="/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
+</head>
+<body style="display:flex;">
+    <!-- Top Nav Bar
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://cortex.webhop.me:8081"> <img src="http://www.stephenhawes.com/icon.png" height="30px" style="display:inline;margin-right:12px;margin-top:-4px;"/>Cortex Dashboard</a>
+            </div>
+        </div>
+    </nav>
+    -->
+    <div class="container col-md-2 col-sm-2 col-xs-2" style="background-color:black;color:white;padding-left:20px;align-items:stretch;">
+        <h3>Hello Stephen!</h3>
+
+        <div class="container col-md-12">
+            <p id="date"></p>
+        </div>
+
+    </div>
+
+
+    <div class="container col-md-10 col-sm-10 col-xs-10" style="margin-top:20px;">
+
+          <div id="buttonColumn" class="col-md-8">
+
+              <div id="lightsPanel" class="panel panel-warning">
+                  <div class="panel-heading">Lights</div>
+                  <div class="panel-body">
+                      <!-- Workshop -->
+                      <div class="btn-group">
+                          <button type="button" class="btn btn-lg btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Workshop <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dLabel">
+                              <li><a href="#">On</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">Dim</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">Off</a></li>
+                          </ul>
+                      </div>
+
+                      <!-- Kitchen -->
+                      <div class="btn-group">
+                          <button type="button" class="btn btn-lg btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Kitchen <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dLabel">
+                              <li><a href="#">On</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">Dim</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">Off</a></li>
+                          </ul>
+                      </div>
+
+                      <!-- Bedroom -->
+                      <div class="btn-group">
+                          <button type="button" class="btn btn-lg btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Bedroom <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dLabel">
+                              <li><a href="#">On</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">Dim</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">Off</a></li>
+                          </ul>
+                      </div>
+
+                      <!-- Presets -->
+                      <div class="btn-group" role="group" aria-label="...">
+                          <button type="button" class="btn btn-lg btn-default">Sleeping</button>
+                          <button type="button" class="btn btn-lg btn-default">Working</button>
+                          <button type="button" class="btn btn-lg btn-default">Reading</button>
+                      </div>
+
+                  </div>
+              </div>
+
+              <div class="panel panel-success">
+                  <div class="panel-heading">Access</div>
+                  <div class="panel-body">
+
+                  <form method="GET" action="http://10.0.1.11:8081">
+                      <button id="frontDoorButton" type="submit" value="on" class="btn btn-lg btn-danger">Front Door</button>
+                      <button id="HackPGH" type="submit" value="off" class="btn btn-lg btn-success">HackPGH</button>
+                      <button id="recentActivity" type="submit" value="activity" class="btn btn-lg btn-info">Recent Activity</button>
+                      <button id="settings" type="submit" value="settings" class="btn btn-lg btn-primary">Access Settings</button>
+
+                  </form>
+                  </div>
+              </div>
+
+              <div class="panel panel-info">
+                  <div class="panel-heading">Status</div>
+                  <div class="panel-body">
+                      <div class="col-md-6">
+                          <div class="input-group input-group-lg">
+                              <span class="input-group-addon" id="sizing-addon2">70&#8457;</span>
+                              <input type="text" class="form-control" placeholder="&#8457;">
+                                  <span class="input-group-btn">
+                                      <button id="setTempButton" class="btn btn-default" type="button">Set</button>
+                                  </span>
+                              </input>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                              <button type="button" class="btn btn-success">Washer</button>
+                              <button type="button" class="btn btn-info">Dryer</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div id="feedColumn" class="col-md-4">
+              <h3>Taz</h3>
+              <img width="100%" src="http://74.111.126.67/webcam/?action=stream" />
+
+          </div>
+
+    </div>
+
+</body>
+</html>
